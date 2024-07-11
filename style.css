@@ -1,0 +1,75 @@
+body {
+    background-color: #white; /*Couleur du fond*/
+
+    font-family: Courier, sans-serif;
+            text-align: center;
+            padding: 70px;       
+        
+}
+
+.icon {
+            width: 250px;
+            height: 250px;
+            margin: auto;
+        }
+
+div2 {
+           font-family: Courier, sans-serif;
+            text-align: left;
+            padding: 20px;
+            font-size: 3em;
+            font-weight: bold; 
+        }
+
+.weather {
+            font-size: 6em;
+            font-weight: bold; 
+        }
+
+
+
+h1 {
+    vertical-align: top;
+    text-align: center;
+    padding: 1px;
+    font-size: 3em;
+    margin: auto; 
+    padding: 5px;
+}
+
+h2 {
+    vertical-align: top;
+    text-align: center;
+    padding: 1px;
+    font-size: 2em; 
+    
+}
+
+.logo {
+    width: 100px; 
+    height: auto; /* Ajustez la taille selon votre logo */
+    position: absolute;
+    bottom: 20px; /* Ajustez la valeur pour définir la distance depuis le bas */
+    right: 20px; /* Ajustez la valeur pour définir la distance depuis la droite */
+    width: 225px; /* Ajustez la largeur du logo */
+    height: auto; /* Garantit le respect des proportions */
+}
+
+h5 {
+   vertical-align: top;
+   text-align: center;
+   font-size: 2em; 
+}
+
+h4 {
+    vertical-align: top;
+   text-align: center;
+   font-size: 2em;
+}
+
+h3 {
+    vertical-align: top;
+   text-align: center;
+   font-size: 2em;
+
+}

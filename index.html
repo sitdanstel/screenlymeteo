@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo</title>
+    <style>
+        
+    </style>
+</head>
+    <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <img src="C:\meteo-screenly\logoanstel.png" alt="Logo de votre entreprise" class="logo">
+
+    <h1>BONJOUR À TOUS 👋</h1>
+    <h5>Nous sommes le : </h5>
+    <div2 id="current_date">
+    <script>
+        
+        date = new Date();
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        day = date.getDate();
+
+        document.getElementById("current_date").innerHTML = day + "/" + month + "/" + year;
+
+    </script>
+</div2> 
+
+    <h4>🌞La Météo du jour à Courbevoie 🌧️</h4>
+
+    <div class="weather" id="weather">Chargement...</div>
+      
+    <img id="icon" class="icon" alt="Icône météo" style="display: none;">
+
+    <script>
+        const apiKey = '0caeb23992425fbd8b14453235f0ac1d'; // clé API
+        const city = 'Courbevoie'; //ville 
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=Courbevoie&appid=0caeb23992425fbd8b14453235f0ac1d&units=metric&lang=fr`; //URL de l'API
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Erreur HTTP ! statut : ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const weather = document.getElementById('weather');
+                const iconElement = document.getElementById('icon');
+                const description = data.weather[0].description;
+                const temperature = data.main.temp;
+                const iconCode = data.weather[0].icon; // Récupération du code de l'icône en fonction de la temprature
+                const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`; // Construction de l'URL de l'icône en fonction de la temprature
+
+                weather.innerText = `${description}, ${temperature}°C`;
+                iconElement.src = iconUrl;
+                iconElement.style.display = 'block'; // Affichage de l'icône
+            })
+            .catch(error => {
+                const weather = document.getElementById('weather');
+                weather.innerText = 'Impossible de récupérer les données météo';
+                console.error('Erreur lors de la récupération des données météo :', error);
+            });
+    </script>
+
+    <h3>BONNE JOURNEE 👋</h3>
+</body>
+</html>
